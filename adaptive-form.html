@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Registration Form</title>
+
+    <style>
+        /* Default light theme colours */
+        :root {
+            --bg: #ffffff;
+            --text: #1e293b;
+        }
+
+        /* Switch to dark colours when OS is in dark mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f172a;
+                --text: #f8fafc;
+            }
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .adaptive-btn {
+            transition: transform 0.3s;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Disable animation for users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .adaptive-btn {
+                transition: none;
+            }
+        }
+
+        /* Full-width inputs on mobile */
+        @media (max-width: 600px) {
+            input, select, textarea {
+                width: 100%;
+                font-size: 16px;
+                box-sizing: border-box;
+                margin-bottom: 12px;
+                padding: 10px;
+            }
+        }
+
+        .form-container {
+            max-width: 450px;
+            margin: 30px auto;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 5px;
+        }
+
+        .adaptive-btn:hover {
+            transform: scale(1.05);
+        }
+        
+input, select, textarea {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid #94a3b8;
+    border-radius: 5px;
+    padding: 10px;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>Register</h1>
+        <p>Create your account below.</p>
+
+        <form>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname"
+                   placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email"
+                   placeholder="Enter your email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"
+                   placeholder="Enter your password" required>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="south-africa">South Africa</option>
+                <option value="other">Other</option>
+            </select>
+
+            <br><br>
+
+            <button type="submit" class="adaptive-btn">
+                Register
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

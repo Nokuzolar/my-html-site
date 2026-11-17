@@ -1,0 +1,1 @@
+I found the Fetch API easier to use than XMLHttpRequest because it requires less code and is easier to read and understand. XMLHttpRequest works too, but it needs a few more steps to retrieve the data.

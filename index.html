@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="layout">
+
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Navigation links go here.</p>
+    </div>
+
+    <div class="content">
+    <h1>Welcome to My Website</h1>
+    <p>This is the main content area.</p>
+
+    <h2>Browser Context Detection</h2>
+
+    <p id="context"></p>
+
+    <script>
+        const ctx = {
+            online: navigator.onLine,
+            language: navigator.language,
+            mobile: /Mobi|Android/i.test(navigator.userAgent)
+        };
+
+        document.getElementById('context').textContent =
+            JSON.stringify(ctx, null, 2);
+
+        console.log('PM-04 debug context:', ctx);
+    </script>
+</div>
+
+    <div class="sidebar">
+    <h2>Navigation</h2>
+    <p>Home</p>
+    <p>About</p>
+</div>
+</div>
+   
+</body>
+</html>
